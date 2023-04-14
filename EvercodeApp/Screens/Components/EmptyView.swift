@@ -12,8 +12,8 @@ class EmptyView: UIView {
         return label
     }()
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init() {
+        super.init(frame: .zero)
 
         addSubview(emptyLabel)
 
@@ -26,8 +26,10 @@ class EmptyView: UIView {
 
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            emptyLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            emptyLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
+            emptyLabel.topAnchor.constraint(equalTo: topAnchor),
+            emptyLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            emptyLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+            emptyLabel.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }
